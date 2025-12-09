@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9А на 5 уроке | Мемы про проекты</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #7b68ee;
+            --secondary: #00d4ff;
+            --accent: #ff3e80;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+        }
+        
+        body {
+            background-color: #0f0f1e;
+            color: var(--light);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(123, 104, 238, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 20%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            animation: pulse 2s infinite;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .stats {
+            display: flex;
+            gap: 30px;
+            background: rgba(123, 104, 238, 0.1);
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 1px solid rgba(123, 104, 238, 0.3);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(123, 104, 238, 0.15) 0%, transparent 70%);
+            z-index: -1;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #aaa;
+        }
+        
+        .highlight {
+            background: rgba(255, 62, 128, 0.2);
+            padding: 5px 15px;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 10px 0;
+            border: 1px solid var(--accent);
+        }
+        
+        /* Memes Grid */
+        .memes-section {
+            padding: 40px 0 80px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+        
+        .memes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .meme-card {
+            background: rgba(26, 26, 46, 0.8);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(123, 104, 238, 0.2);
+        }
+        
+        .meme-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(123, 104, 238, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .meme-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(123, 104, 238, 0.2);
+        }
+        
+        .meme-content {
+            padding: 20px;
+        }
+        
+        .meme-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .meme-desc {
+            color: #aaa;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .meme-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tag {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--secondary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .tag.project {
+            background: rgba(255, 62, 128, 0.1);
+            color: var(--accent);
+        }
+        
+        .tag.lesson {
+            background: rgba(123, 104, 238, 0.1);
+            color: var(--primary);
+        }
+        
+        .tag.class9a {
+            background: rgba(0, 255, 157, 0.1);
+            color: #00ff9d;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(26, 26, 46, 0.95);
+            padding: 40px 0 20px;
+            border-top: 2px solid var(--primary);
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-section h3::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(123, 104, 238, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .meme-counter {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(26, 26, 46, 0.9);
+            border: 2px solid var(--primary);
+            border-radius: 15px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .counter-icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+        
+        /* Новый блок для статуса проекта */
+        .project-status {
+            background: rgba(26, 26, 46, 0.8);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px auto;
+            max-width: 800px;
+            border: 1px solid rgba(123, 104, 238, 0.3);
+            text-align: center;
+        }
+        
+        .project-status h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .status-bar {
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .status-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            width: 65%;
+            border-radius: 10px;
+            position: relative;
+            animation: progress-pulse 2s infinite;
+        }
+        
+        .status-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Блок с учениками */
+        .classmates {
+            background: rgba(26, 26, 46, 0.8);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px auto;
+            max-width: 800px;
+            border: 1px solid rgba(123, 104, 238, 0.3);
+        }
+        
+        .classmates h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        
+        .classmates-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .classmate-item {
+            background: rgba(123, 104, 238, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .classmate-item:hover {
+            transform: translateY(-5px);
+            background: rgba(123, 104, 238, 0.2);
+        }
+        
+        .classmate-icon {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes progress-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .stats {
+                width: 100%;
+                justify-content: space-around;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .memes-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .meme-counter {
+                bottom: 10px;
+                right: 10px;
+                left: 10px;
+                justify-content: center;
+            }
+            
+            .classmates-list {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>9А НА 5 УРОКЕ</h1>
+                        <p>Элита школы - наш 9А класс!</p>
+                    </div>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-value">9-А</div>
+                        <div class="stat-label">Легенда школы</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">20</div>
+                        <div class="stat-label">Крутых учеников</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">∞</div>
+                        <div class="stat-label">Мем-мощность</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>20 человек, 1000 проектов<br>и вечный 5 урок</h2>
+            <p>Только наш 9А знает, как совмещать учебу, проекты и создание легендарных мемов!</p>
+            <div class="highlight">
+                <i class="fas fa-crown"></i> 20 учеников - 20 личностей, один легендарный класс!
+            </div>
+        </div>
+    </section>
+    
+    <!-- Classmates Block -->
+    <div class="container">
+        <div class="classmates">
+            <h3><i class="fas fa-users"></i> Наши 20 легенд</h3>
+            <p style="text-align: center; margin-bottom: 20px; color: #aaa;">Каждый вносит свой вклад в мем-культуру 9А</p>
+            <div class="classmates-list">
+                <div class="classmate-item">
+                    <div class="classmate-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div>ИТ-гений</div>
+                </div>
+                <div class="classmate-item">
+                    <div class="classmate-icon"><i class="fas fa-paint-brush"></i></div>
+                    <div>Дизайнер</div>
+                </div>
+                <div class="classmate-item">
+                    <div class="classmate-icon"><i class="fas fa-chart-line"></i></div>
+                    <div>Аналитик</div>
+                </div>
+                <div class="classmate-item">
+                    <div class="classmate-icon"><i class="fas fa-comment-dots"></i></div>
+                    <div>Мемолог</div>
+                </div>
+                <div class="classmate-item">
+                    <div class="classmate-icon"><i class="fas fa-cookie-bite"></i></div>
+                    <div>Снабженец</div>
+                </div>
+                <div class="classmate-item">
+                    <div class="classmate-icon"><i class="fas fa-music"></i></div>
+                    <div>Музыкант</div>
+                </div>
+                <div class="classmate-item">
+                    <div class="classmate-icon"><i class="fas fa-theater-masks"></i></div>
+                    <div>Юморист</div>
+                </div>
+                <div class="classmate-item">
+                    <div class="classmate-icon"><i class="fas fa-clock"></i></div>
+                    <div>Таймкипер</div>
+                </div>
+                <div class="classmate-item">
+                    <div class="classmate-icon"><i class="fas fa-coffee"></i></div>
+                    <div>Кофе-мастер</div>
+                </div>
+                <div class="classmate-item">
+                    <div class="classmate-icon"><i class="fas fa-book"></i></div>
+                    <div>Теоретик</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Project Status -->
+    <div class="container">
+        <div class="project-status">
+            <h3><i class="fas fa-chart-line"></i> Статус проектов 9А</h3>
+            <p>20 человек = 20 проектов, которые все равно делают 5 человек</p>
+            <div class="status-bar">
+                <div class="status-progress"></div>
+            </div>
+            <div class="status-text">
+                <span>Начало: "Мы всё успеем!"</span>
+                <span>Сейчас: "20 человек, 5 работают"</span>
+                <span>Конец: "Выжили!"</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Memes Section -->
+    <section class="memes-section">
+        <div class="container">
+            <h2 class="section-title">Мемы от 20 гениев 9А</h2>
+            
+            <div class="memes-grid">
+                <!-- Meme 1 -->
+                <div class="meme-card">
+                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Ученик за компьютером" class="meme-img">
+                    <div class="meme-content">
+                        <h3 class="meme-title">Когда ты 1 из 20 в 9А</h3>
+                        <p class="meme-desc">Именно тебе выпало делать проект за всю команду. Судьба выбрала тебя!</p>
+                        <div class="meme-tags">
+                            <span class="tag project">Судьба</span>
+                            <span class="tag class9a">9А</span>
+                            <span class="tag">20 человек</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Meme 2 -->
+                <div class="meme-card">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Заваленный работой стол" class="meme-img">
+                    <div class="meme-content">
+                        <h3 class="meme-title">20 домашних заданий</h3>
+                        <p class="meme-desc">Когда понимаешь, что у 20 человек 20 разных проектов, а времени на всех нет.</p>
+                        <div class="meme-tags">
+                            <span class="tag project">ДЗ</span>
+                            <span class="tag class9a">9А</span>
+                            <span class="tag">20 заданий</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Meme 3 -->
+                <div class="meme-card">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Программист за работой" class="meme-img">
+                    <div class="meme-content">
+                        <h3 class="meme-title">Из 20 человек кодят 3</h3>
+                        <p class="meme-desc">Классическое распределение задач в 9А: 3 работают, 17 "морально поддерживают".</p>
+                        <div class="meme-tags">
+                            <span class="tag">Реальность</span>
+                            <span class="tag class9a">9А</span>
+                            <span class="tag">Распределение</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Meme 4 -->
+                <div class="meme-card">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Уставший ученик" class="meme-img">
+                    <div class="meme-content">
+                        <h3 class="meme-title">5 урок в 9А из 20 человек</h3>
+                        <p class="meme-desc">5 спят, 10 в телефоне, 3 делают проект, 2 ищут оправдания. Математика 9А.</p>
+                        <div class="meme-tags">
+                            <span class="tag">Статистика</span>
+                            <span class="tag class9a">9А</span>
+                            <span class="tag">20 = 5+10+3+2</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Meme 5 -->
+                <div class="meme-card">
+                    <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Группа учеников" class="meme-img">
+                    <div class="meme-content">
+                        <h3 class="meme-title">Собрание 20 гениев</h3>
+                        <p class="meme-desc">Когда нужно принять решение, а 20 мнений = 20 разных решений. Демократия в 9А.</p>
+                        <div class="meme-tags">
+                            <span class="tag project">Совещание</span>
+                            <span class="tag class9a">9А</span>
+                            <span class="tag">20 мнений</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Meme 6 -->
+                <div class="meme-card">
+                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Девушка с ноутбуком" class="meme-img">
+                    <div class="meme-content">
+                        <h3 class="meme-title">Когда из 20 сдали 19</h3>
+                        <p class="meme-desc">А один забыл сохранить файл. Всегда есть тот самый "один" в классе из 20 человек.</p>
+                        <div class="meme-tags">
+                            <span class="tag project">Трагедия</span>
+                            <span class="tag class9a">9А</span>
+                            <span class="tag">19 из 20</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>9А - 20 человек силы</h3>
+                    <p>20 уникальных личностей создали эту мем-культуру. Каждый день - новое приключение!</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>20 причин любить 9А</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">20 разных характеров</a></li>
+                        <li><a href="#">20 стилей учебы</a></li>
+                        <li><a href="#">20 видов мемов</a></li>
+                        <li><a href="#">20 подходов к проектам</a></li>
+                        <li><a href="#">20 способов выжить</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Математика 9А</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">20 человек × 0 времени =</a></li>
+                        <li><a href="#">20 проектов ÷ 5 уроков =</a></li>
+                        <li><a href="#">5 работают + 15 "помогают" =</a></li>
+                        <li><a href="#">Успех 9А!</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2023 "9А на 5 уроке" | 20 гениев, 1 класс | Сделано на 5 уроке вместо проекта</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Meme Counter -->
+    <div class="meme-counter">
+        <div class="counter-icon">
+            <i class="fas fa-fire"></i>
+        </div>
+        <div>
+            <div class="stat-value">2,020</div>
+            <div class="stat-label">мемов от 20 учеников</div>
+        </div>
+    </div>
+    
+    <script>
+        // Анимация для счетчика мемов
+        let memeCount = 2020;
+        const counterElement = document.querySelector('.meme-counter .stat-value');
+        
+        setInterval(() => {
+            memeCount += Math.floor(Math.random() * 20) + 1; // +20 в честь 20 учеников
+            counterElement.textContent = memeCount.toLocaleString();
+        }, 3000);
+        
+        // Добавление эффекта "лайка" для карточек мемов
+        document.querySelectorAll('.meme-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-10px) scale(1)';
+                }, 200);
+                
+                // Увеличение счетчика при клике
+                memeCount += 20; // +20 в честь 20 учеников
+                counterElement.textContent = memeCount.toLocaleString();
+                
+                // Добавляем тег с числом 20
+                const tags = this.querySelector('.meme-tags');
+                if (!tags.innerHTML.includes('20')) {
+                    const countTag = document.createElement('span');
+                    countTag.className = 'tag class9a';
+                    countTag.textContent = '20 человек';
+                    tags.appendChild(countTag);
+                }
+            });
+        });
+        
+        // Анимация для плавающих элементов
+        const logoIcon = document.querySelector('.logo-icon');
+        setInterval(() => {
+            logoIcon.classList.toggle('floating');
+        }, 3000);
+        
+        // Анимация прогресс-бара
+        const progressBar = document.querySelector('.status-progress');
+        let progress = 65;
+        setInterval(() => {
+            progress = 65 + Math.sin(Date.now() / 5000) * 10;
+            progressBar.style.width = progress + '%';
+        }, 100);
+        
+        // Анимация для учеников
+        document.querySelectorAll('.classmate-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.05)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+        
+        // Случайное изменение числа в статистике
+        const statValues = document.querySelectorAll('.stat-value');
+        setInterval(() => {
+            // Подчеркиваем, что учеников именно 20
+            statValues[1].textContent = '20';
+            
+            // Случайные символы для счетчика мемов
+            const symbols = ['2,020', '∞', '9А', '20/20'];
+            statValues[2].textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        }, 7000);
+    </script>
+</body>
+</html>
